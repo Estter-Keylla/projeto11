@@ -1,0 +1,811 @@
+
+/* =================================
+   1. CONFIGURAÇÕES GERAIS
+================================= */
+
+:root {
+    --azul: #102e5c;
+    --azul-medio: #176fe5;
+    --azul-claro: #a9dafa;
+    --turquesa: #20d4bd;
+    --fundo: #edf6ff;
+    --branco: #ffffff;
+    --cinza: #657b9d;
+    --borda: #d1e2f5;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fundo);
+    color: var(--azul);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =================================
+   2. CABEÇALHO
+================================= */
+
+.cabecalho {
+    height: 66px;
+    background: var(--branco);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 5%;
+    gap: 25px;
+}
+
+.logo {
+    font-size: 29px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--azul-medio);
+}
+
+.cabecalho nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    height: 100%;
+}
+
+.cabecalho nav a {
+    font-size: 14px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid transparent;
+}
+
+.cabecalho nav a:hover,
+.cabecalho nav a.ativo {
+    color: var(--azul-medio);
+    border-color: var(--turquesa);
+}
+
+.usuario {
+    font-size: 28px;
+}
+
+
+/* =================================
+   3. PESQUISA DO CABEÇALHO
+================================= */
+
+.busca-topo {
+    display: flex;
+    align-items: center;
+    background: #f4f8fd;
+    border: 1px solid var(--borda);
+    border-radius: 30px;
+    padding: 5px 12px;
+    margin-left: auto;
+}
+
+.busca-topo input {
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 8px;
+    width: 230px;
+}
+
+.busca-topo button {
+    border: none;
+    background: transparent;
+    color: var(--azul);
+    font-size: 22px;
+}
+
+
+/* =================================
+   4. BANNER PRINCIPAL
+================================= */
+
+.banner {
+    min-height: 292px;
+
+    background: linear-gradient(
+        180deg,
+        #b8def8,
+        #8bc9ef
+    );
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 40px 5%;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.banner::after {
+    content: "";
+
+    position: absolute;
+    left: -5%;
+    bottom: -180px;
+
+    width: 110%;
+    height: 280px;
+
+    background: var(--azul);
+
+    border-radius: 50% 50% 0 0;
+}
+
+.banner-texto,
+.banner-lateral {
+    position: relative;
+    z-index: 2;
+}
+
+.banner-texto {
+    max-width: 650px;
+}
+
+.subtitulo {
+    color: var(--azul-medio);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.banner h1 {
+    font-size: 39px;
+    line-height: 1.15;
+    margin: 10px 0;
+}
+
+.banner-texto > p:not(.subtitulo) {
+    color: #284b77;
+}
+
+.banner-lateral {
+    text-align: center;
+    color: white;
+}
+
+.banner-lateral p {
+    font-size: 25px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.banner-lateral button {
+    background: var(--turquesa);
+    color: var(--azul);
+    border: none;
+    padding: 12px 18px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.banner-lateral small {
+    display: block;
+    margin-top: 8px;
+}
+
+
+/* =================================
+   5. CAMPO DE PESQUISA DO BANNER
+================================= */
+
+.busca-banner {
+    display: flex;
+    align-items: center;
+
+    background: white;
+    border-radius: 30px;
+    padding: 5px;
+
+    max-width: 520px;
+    margin-top: 25px;
+}
+
+.busca-banner input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px;
+    border: none;
+    outline: none;
+}
+
+.busca-banner button {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: var(--turquesa);
+    color: var(--azul);
+    font-size: 22px;
+}
+
+
+/* =================================
+   6. CONTAINER E BENEFÍCIOS
+================================= */
+
+.container {
+    max-width: 1240px;
+    margin: auto;
+    padding-left: 22px;
+    padding-right: 22px;
+}
+
+.beneficios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.beneficios article {
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+
+    padding: 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.beneficios article span {
+    font-size: 28px;
+}
+
+.beneficios h2 {
+    font-size: 16px;
+    margin: 0 0 6px;
+}
+
+.beneficios p {
+    color: var(--cinza);
+    font-size: 12px;
+    margin: 0;
+}
+
+
+/* =================================
+   7. CONTEÚDO PRINCIPAL
+================================= */
+
+.layout-principal {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 265px;
+    gap: 25px;
+    padding-bottom: 40px;
+}
+
+.titulo-secao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 18px 0;
+}
+
+.titulo-secao h2 {
+    font-size: 22px;
+}
+
+.titulo-secao a {
+    color: var(--azul-medio);
+    font-size: 14px;
+}
+
+
+/* =================================
+   8. CARDS DE EVENTOS
+================================= */
+
+.grade-eventos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.card-evento {
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 15px;
+    overflow: hidden;
+
+    box-shadow: 0 5px 16px #173d6410;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.foto-card {
+    height: 145px;
+
+    background-size: cover;
+    background-position: center;
+    background-color: #c5d8e9;
+
+    position: relative;
+}
+
+.categoria-tag {
+    position: absolute;
+    bottom: 12px;
+    left: 13px;
+
+    background: #078f83;
+    color: white;
+
+    border-radius: 15px;
+    padding: 5px 11px;
+
+    font-size: 11px;
+}
+
+.card-conteudo {
+    padding: 14px;
+
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card-conteudo h3 {
+    font-size: 16px;
+    line-height: 1.3;
+}
+
+.metadado {
+    font-size: 12px;
+    color: #405b80;
+}
+
+.assunto {
+    display: inline-block;
+    align-self: flex-start;
+
+    background: #edf5ff;
+    border: 1px solid var(--borda);
+
+    border-radius: 7px;
+    padding: 5px 9px;
+
+    font-size: 11px;
+    color: var(--cinza);
+    margin: 9px 0;
+}
+
+.presencas {
+    font-size: 12px;
+    color: var(--cinza);
+}
+
+.acoes-card {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 12px;
+}
+
+.acoes-card a,
+.acoes-card button {
+    flex: 1;
+    background: white;
+    border: 1px solid var(--azul);
+    border-radius: 8px;
+
+    padding: 9px;
+    text-align: center;
+    color: var(--azul);
+    font-size: 12px;
+}
+
+.acoes-card button {
+    flex: 0 0 40px;
+    font-size: 18px;
+}
+
+.botao-eu-vou-card {
+    margin-top: 9px;
+    background: var(--turquesa);
+    color: var(--azul);
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+
+/* =================================
+   9. BARRA LATERAL E CALENDÁRIO
+================================= */
+
+.barra-lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.painel {
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 15px;
+    padding: 18px;
+    margin-bottom: 18px;
+}
+
+.painel h2 {
+    font-size: 17px;
+}
+
+.calendario-cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 14px 0;
+}
+
+.calendario-cabecalho button {
+    border: none;
+    background: transparent;
+    font-size: 22px;
+    color: var(--azul);
+}
+
+.calendario-grade {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+}
+
+.dia-semana,
+.dia-calendario {
+    padding: 7px 0;
+    font-size: 12px;
+}
+
+.dia-semana {
+    color: var(--cinza);
+}
+
+.dia-calendario {
+    border: none;
+    background: transparent;
+    border-radius: 50%;
+    color: var(--azul);
+}
+
+.dia-calendario.tem-evento {
+    background: var(--turquesa);
+    font-weight: bold;
+}
+
+.dia-calendario.selecionado {
+    outline: 2px solid var(--azul-medio);
+}
+
+.legenda {
+    font-size: 11px;
+    color: var(--cinza);
+}
+
+
+/* =================================
+   10. PRÓXIMOS EVENTOS
+================================= */
+
+.proximo-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 12px 0;
+}
+
+.miniatura {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 9px;
+}
+
+.proximo-item strong {
+    font-size: 12px;
+    display: block;
+}
+
+.proximo-item small {
+    font-size: 10px;
+    color: var(--cinza);
+}
+
+
+/* =================================
+   11. ARTISTAS
+================================= */
+
+.secao-artistas {
+    margin-top: 35px;
+}
+
+.grade-artistas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.artista-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 12px;
+
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 13px;
+}
+
+.artista-card img {
+    width: 58px;
+    height: 58px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.artista-card h3 {
+    font-size: 14px;
+    margin: 0 0 4px;
+}
+
+.artista-card p {
+    font-size: 12px;
+    color: var(--cinza);
+}
+
+.selo {
+    font-size: 10px;
+    color: #078b78;
+}
+
+
+/* =================================
+   12. PÁGINA DE EVENTOS
+================================= */
+
+.pagina-listagem,
+.pagina-detalhes {
+    padding-top: 38px;
+    padding-bottom: 40px;
+}
+
+.titulo-pagina h1 {
+    font-size: 32px;
+    margin: 6px 0;
+}
+
+.titulo-pagina p {
+    color: var(--cinza);
+}
+
+.filtros {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 12px;
+
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+
+    padding: 16px;
+    margin: 25px 0;
+}
+
+.filtros label,
+.formulario label {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.filtros input,
+.filtros select,
+.formulario input,
+.formulario select,
+.formulario textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 11px;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    background: white;
+    color: var(--azul);
+}
+
+.grade-listagem {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.botao-secundario {
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 9px;
+    padding: 10px;
+    color: var(--azul);
+}
+
+
+/* =================================
+   13. FORMULÁRIOS E JANELA
+================================= */
+
+#dialog-publicacao {
+    border: none;
+    border-radius: 16px;
+    padding: 0;
+
+    width: min(560px, calc(100% - 24px));
+    max-height: 90vh;
+}
+
+#dialog-publicacao::backdrop {
+    background: #071b38aa;
+}
+
+.formulario {
+    padding: 28px;
+    display: grid;
+    gap: 13px;
+
+    position: relative;
+    max-height: 90vh;
+    overflow: auto;
+}
+
+.formulario h2 {
+    margin: 0;
+}
+
+.fechar {
+    position: absolute;
+    right: 16px;
+    top: 10px;
+
+    border: none;
+    background: transparent;
+
+    font-size: 27px;
+    color: var(--azul);
+}
+
+.checkbox {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+}
+
+.checkbox input {
+    width: auto;
+}
+
+.botao-principal {
+    background: var(--turquesa);
+    color: var(--azul);
+    border: none;
+    border-radius: 9px;
+    padding: 12px 18px;
+    font-weight: bold;
+}
+
+.voltar {
+    display: inline-block;
+    color: var(--azul-medio);
+    margin-bottom: 20px;
+}
+
+.detalhe-evento {
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 22px;
+}
+
+.detalhe-capa {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.detalhe-corpo {
+    padding: 24px;
+}
+
+.detalhe-acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.detalhe-acoes button,
+.detalhe-acoes a {
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 9px;
+    padding: 11px;
+    color: var(--azul);
+}
+
+.comentario {
+    border-top: 1px solid var(--borda);
+    padding: 12px 0;
+    font-size: 13px;
+}
+
+.oportunidade {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--borda);
+}
+
+.oportunidade a {
+    color: var(--azul-medio);
+    font-size: 12px;
+}
+
+.vazio {
+    grid-column: 1 / -1;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    text-align: center;
+    color: var(--cinza);
+}
+
+
+/* =================================
+   14. RODAPÉ
+================================= */
+
+.rodape {
+    text-align: center;
+    padding: 24px;
+    background: white;
+    color: var(--cinza);
+    font-size: 12px;
+}
