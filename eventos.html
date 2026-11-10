@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eventos | Culturama</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+
+        <a href="../index.html" class="logo">▦ Culturama</a>
+
+        <nav>
+            <a href="../index.html">Início</a>
+            <a href="../eventos.html" class="ativo">Eventos</a>
+            <a href="../index.html#artistas">Artistas</a>
+        </nav>
+
+        <a href="../favoritos.html" class="usuario">♡</a>
+
+    </header>
+
+
+    <main class="container pagina-listagem">
+
+        <section class="titulo-pagina">
+
+            <p class="subtitulo">AGENDA CULTURAL</p>
+
+            <h1>Encontre seu próximo evento</h1>
+
+            <p>
+                Explore o que está acontecendo perto de você.
+            </p>
+
+        </section>
+
+
+        <!-- FILTROS -->
+        <section class="filtros">
+
+            <label>
+                Pesquisar
+                <input
+                    type="search"
+                    id="filtro-pesquisa"
+                    placeholder="Nome ou local"
+                >
+            </label>
+
+            <label>
+                Categoria
+                <select id="filtro-categoria">
+                    <option value="todos">Todas</option>
+                    <option value="show">Shows</option>
+                    <option value="comunidade">Comunidade</option>
+                    <option value="palestra">Palestras</option>
+                    <option value="teatro">Teatro e cinema</option>
+                    <option value="esporte">Esportes</option>
+                    <option value="outros">Outros</option>
+                </select>
+            </label>
+
+            <label>
+                Data
+                <select id="filtro-data">
+                    <option value="todos">Todas as datas</option>
+                    <option value="fim-semana">Este fim de semana</option>
+                    <option value="proximos">Próximos eventos</option>
+                </select>
+            </label>
+
+            <label>
+                Bairro
+                <input
+                    type="search"
+                    id="filtro-bairro"
+                    placeholder="Digite o bairro"
+                >
+            </label>
+
+            <label>
+                Preço
+                <select id="filtro-preco">
+                    <option value="todos">Todos</option>
+                    <option value="gratuito">Gratuitos</option>
+                    <option value="pago">Pagos</option>
+                </select>
+            </label>
+
+        </section>
+
+
+        <div class="titulo-secao">
+            <h2>Eventos disponíveis</h2>
+
+            <button data-abrir-publicacao class="botao-secundario">
+                + Publicar evento
+            </button>
+        </div>
+
+
+        <!-- Cards gerados pelo JavaScript -->
+        <div id="lista-eventos" class="grade-eventos"></div>
+
+
+        <!-- OPORTUNIDADES PARA ARTISTAS -->
+        <section class="painel">
+
+            <h2>🎤 Oportunidades para artistas</h2>
+
+            <p>
+                Confira os eventos que estão recebendo inscrições.
+            </p>
+
+            <div id="lista-eventos-abertos"></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FORMULÁRIO DE PUBLICAÇÃO -->
+    <dialog id="dialog-publicacao">
+
+        <form id="form-evento" class="formulario">
+
+            <button type="button" data-fechar-dialogo class="fechar">×</button>
+
+            <h2>Divulgue seu evento</h2>
+
+            <label>Nome
+                <input name="nome" required>
+            </label>
+
+            <label>Categoria
+                <select name="categoria">
+                    <option value="show">Show</option>
+                    <option value="comunidade">Comunidade</option>
+                    <option value="palestra">Palestra</option>
+                    <option value="teatro">Teatro e cinema</option>
+                    <option value="esporte">Esportes</option>
+                    <option value="outros">Outros</option>
+                </select>
+            </label>
+
+            <label>Data
+                <input name="data" type="date" required>
+            </label>
+
+            <label>Local
+                <input name="local" required>
+            </label>
+
+            <label>Bairro
+                <input name="bairro" required>
+            </label>
+
+            <label>Entrada
+                <select name="preco">
+                    <option value="gratuito">Gratuito</option>
+                    <option value="pago">Pago</option>
+                </select>
+            </label>
+
+            <label>Valor
+                <input name="valor" type="number" min="0">
+            </label>
+
+            <label>Imagem (URL)
+                <input name="imagem" type="url">
+            </label>
+
+            <label>Descrição
+                <textarea name="descricao" required></textarea>
+            </label>
+
+            <label class="checkbox">
+                <input type="checkbox" name="artistaAberto">
+                Aceito inscrições de artistas
+            </label>
+
+            <label>Recorrência
+                <select name="recorrencia">
+                    <option value="unico">Único</option>
+                    <option value="semanal">Semanal</option>
+                    <option value="mensal">Mensal</option>
+                </select>
+            </label>
+
+            <button class="botao-principal" type="submit">
+                Publicar evento
+            </button>
+
+        </form>
+
+    </dialog>
+
+
+    <footer class="rodape">
+        <p>© 2026 Culturama</p>
+    </footer>
+
+</body>
+</html>
