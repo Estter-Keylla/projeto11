@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Culturama | Cultura na sua cidade</title>
+
+    <!-- Conexão com os arquivos CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+
+        <a href="../index.html" class="logo">
+            <span>▦</span> Culturama
+        </a>
+
+        <nav>
+            <a href="../index.html" class="ativo">Início</a>
+            <a href="../eventos.html">Eventos</a>
+            <a href="#artistas">Artistas da Comunidade</a>
+        </nav>
+
+        <form id="form-busca-topo" class="busca-topo">
+            <input
+                type="search"
+                placeholder="Buscar eventos, locais, artistas..."
+                id="busca-topo"
+            >
+            <button type="submit">⌕</button>
+        </form>
+
+        <a href="../favoritos.html" class="usuario">♡</a>
+
+    </header>
+
+
+    <!-- BANNER PRINCIPAL -->
+    <section class="banner">
+
+        <div class="banner-texto">
+
+            <p class="subtitulo">CULTURA ACONTECE AQUI</p>
+
+            <h1>
+                Descubra o que acontece
+                <br>
+                na sua cidade!
+            </h1>
+
+            <p>
+                Encontre eventos, conheça artistas
+                e participe da cultura local.
+            </p>
+
+            <form id="form-busca-banner" class="busca-banner">
+                <input
+                    type="search"
+                    placeholder="Buscar eventos, locais, artistas..."
+                >
+
+                <button type="submit">→</button>
+            </form>
+
+        </div>
+
+        <div class="banner-lateral">
+            <p>Sua cidade<br>mais viva! ♡</p>
+
+            <button data-abrir-publicacao>
+                + Publicar evento
+            </button>
+
+            <small>Qualquer pessoa pode divulgar.</small>
+        </div>
+
+    </section>
+
+
+    <!-- BENEFÍCIOS DA PLATAFORMA -->
+    <section class="beneficios container">
+
+        <article>
+            <span>📢</span>
+            <div>
+                <h2>Divulgue seu evento</h2>
+                <p>Compartilhe atividades com a comunidade.</p>
+            </div>
+        </article>
+
+        <article>
+            <span>🙋</span>
+            <div>
+                <h2>Mostre que vai!</h2>
+                <p>Seu interesse ajuda os organizadores.</p>
+            </div>
+        </article>
+
+        <article>
+            <span>🎤</span>
+            <div>
+                <h2>Conecte talentos</h2>
+                <p>Artistas podem se candidatar aos eventos.</p>
+            </div>
+        </article>
+
+    </section>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="container layout-principal">
+
+        <section class="conteudo">
+
+            <div class="titulo-secao">
+                <h2>✦ Destaques da semana</h2>
+                <a href="../eventos.html">Ver todos →</a>
+            </div>
+
+            <!-- Os eventos serão colocados pelo JavaScript -->
+            <div id="lista-destaques" class="grade-eventos"></div>
+
+
+            <!-- ARTISTAS -->
+            <section id="artistas" class="secao-artistas">
+
+                <div class="titulo-secao">
+                    <h2>⭐ Artistas da comunidade</h2>
+                </div>
+
+                <div id="lista-artistas" class="grade-artistas"></div>
+
+            </section>
+
+        </section>
+
+
+        <!-- BARRA LATERAL -->
+        <aside class="barra-lateral">
+
+            <section class="painel">
+
+                <h2>▦ Calendário</h2>
+
+                <div class="calendario-cabecalho">
+
+                    <button id="mes-anterior">‹</button>
+
+                    <strong id="mes-atual"></strong>
+
+                    <button id="mes-proximo">›</button>
+
+                </div>
+
+                <div id="calendario-grade" class="calendario-grade"></div>
+
+                <p class="legenda">Dias destacados possuem eventos.</p>
+
+            </section>
+
+
+            <section class="painel">
+
+                <h2>⚡ Próximos eventos</h2>
+
+                <div id="proximos-eventos"></div>
+
+            </section>
+
+        </aside>
+
+    </main>
+
+
+    <!-- FORMULÁRIO DE PUBLICAÇÃO -->
+    <dialog id="dialog-publicacao">
+
+        <form id="form-evento" class="formulario">
+
+            <button type="button" data-fechar-dialogo class="fechar">
+                ×
+            </button>
+
+            <h2>Divulgue seu evento</h2>
+
+            <label>
+                Nome do evento
+                <input type="text" name="nome" required>
+            </label>
+
+            <label>
+                Categoria
+                <select name="categoria">
+                    <option value="show">Show</option>
+                    <option value="comunidade">Comunidade</option>
+                    <option value="palestra">Palestra</option>
+                    <option value="teatro">Teatro e cinema</option>
+                    <option value="esporte">Esportes</option>
+                    <option value="outros">Outros</option>
+                </select>
+            </label>
+
+            <label>
+                Data
+                <input type="date" name="data" required>
+            </label>
+
+            <label>
+                Local
+                <input type="text" name="local" required>
+            </label>
+
+            <label>
+                Bairro
+                <input type="text" name="bairro" required>
+            </label>
+
+            <label>
+                Entrada
+                <select name="preco">
+                    <option value="gratuito">Gratuito</option>
+                    <option value="pago">Pago</option>
+                </select>
+            </label>
+
+            <label>
+                Valor do ingresso
+                <input type="number" name="valor" min="0" step="0.01">
+            </label>
+
+            <label>
+                Link da foto ou cartaz
+                <input type="url" name="imagem">
+            </label>
+
+            <label>
+                Descrição
+                <textarea name="descricao" required></textarea>
+            </label>
+
+            <label class="checkbox">
+                <input type="checkbox" name="artistaAberto">
+                Aceito inscrições de artistas
+            </label>
+
+            <label>
+                Repetição
+                <select name="recorrencia">
+                    <option value="unico">Evento único</option>
+                    <option value="semanal">Semanal</option>
+                    <option value="mensal">Mensal</option>
+                </select>
+            </label>
+
+            <button type="submit" class="botao-principal">
+                Publicar evento
+            </button>
+
+        </form>
+
+    </dialog>
+
+
+    <footer class="rodape">
+        <p>© 2026 Culturama. A cultura aproxima pessoas.</p>
+    </footer>
+
+</body>
+</html>
